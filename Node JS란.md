@@ -95,4 +95,4 @@ Node JS를 이용해서 서버를 개발하고자 할때 보다 쉽게 서버를
   2. ADD IP ADDRESS 클릭
   3. ADD CURRENT IP ADDRESS 클릭
   4. Confirm
-  5. PENDING 어쩌구 하는거 작업 완료되면 재시도 ㅇㅇ
+  5. PENDING 어쩌구 하는거 작업 완료되면 재시도 ㅇㅇ!
