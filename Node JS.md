@@ -96,3 +96,9 @@ Node JS를 이용해서 서버를 개발하고자 할때 보다 쉽게 서버를
   3. ADD CURRENT IP ADDRESS 클릭
   4. Confirm
   5. PENDING 어쩌구 하는거 작업 완료되면 재시도 ㅇㅇ!
+
+## body-parser란 ?
+
+client에서 보낸 data를 server에서 사용할수 있도록 parser?(정제?)해주는 친구
+
+- npm install body-parser --save
