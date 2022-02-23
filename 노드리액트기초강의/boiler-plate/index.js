@@ -4,6 +4,8 @@ const port = 5000;
 const bodyParser = require('body-parser');
 const { User } = require('./models/User');
 
+const config = require('./config/key');
+
 // bodyparser 옵션
 //application/x-www-form-urlencoded으로 되어있는 데이터 분석가능
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -14,13 +16,10 @@ app.use(bodyParser.json());
 const mongoose = require('mongoose');
 
 mongoose
-  .connect(
-    'mongodb+srv://hyunsix:ckaaotlf2080!@cluster0.8xuxq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(config.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => console.log('MongoDB Connected...'))
   .catch((err) => console.log(err));
 

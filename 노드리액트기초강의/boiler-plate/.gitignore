@@ -168,4 +168,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# mongoDB key
+dev.js
+
 # End of https://www.toptal.com/developers/gitignore/api/windows,node
