@@ -102,3 +102,23 @@ Node JS를 이용해서 서버를 개발하고자 할때 보다 쉽게 서버를
 client에서 보낸 data를 server에서 사용할수 있도록 parser?(정제?)해주는 친구
 
 - npm install body-parser --save
+
+
+
+## nodemon이란 ?
+
+소스를 변경할때 그걸 감지해서 자동으로 서버를 재시작해주는 tool
+
+- npm install nodemon --save-dev
+
+- 시작할때 노드몬으로 시작하기 위해서 script 추가
+
+  ```json
+    "scripts": {
+      "server": "node index.js",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "backend": "nodemon index.js"
+    },
+  ```
+
+  - 이제 npm run backend로 서버 키면 됨
