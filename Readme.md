@@ -122,3 +122,11 @@ client에서 보낸 data를 server에서 사용할수 있도록 parser?(정제?)
   ```
 
   - 이제 npm run backend로 서버 키면 됨
+
+
+
+## Bycrypt로 비밀번호 암호화하기
+
+- npm install bcrypt --save
+- ![image-20220224203859761](image-20220224203859761.png)
+
