@@ -53,8 +53,22 @@ userSchema.pre('save', function (next) {
         next();
       });
     });
+  } else {
+    next();
   }
 });
+
+// pw 비교 함수
+userSchema.methods.comparePassword = function (plainPassword, cb) {
+  // plainPassword 1234567    암호화된 PW $24sakdlcahewoi231354 블라블라
+  // plainPassword를 암호화하고, DB의 암호화된 PW랑 같은지 확인
+  bcrypt.compare(plainPassword, this.password, function (err, isMatch) {
+    if (err) return cb(err);
+    cb(null, isMatch);
+  });
+};
+
+// token 생성함수
 
 const User = mongoose.model('User', userSchema);
 

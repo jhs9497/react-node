@@ -42,6 +42,29 @@ app.post('/register', (req, res) => {
   });
 });
 
+// 로그인 라우터
+app.post('/login', (req, res) => {
+  // 요청된 이메일을 DB안에서 찾기
+  User.findOne({ email: req.body.eamil }, (err, userInfo) => {
+    if (!userInfo) {
+      return res.json({
+        loginSuccess: false,
+        message: '제공된 이메일에 해당하는 유저가 없습니다.',
+      });
+    }
+    // 요청한 이메일이 DB안에 있다면 비밀번호가 같은지 확인
+    userInfo.comparePassword(req.body.password, (err, isMatch) => {});
+    if (!isMatch) {
+      return res.json({
+        loginSuccess: false,
+        messag: '비밀번호가 틀렸습니다.',
+      });
+    }
+    // 비밀번호가 일치한다면 Token생성
+    userInfo.generateToken((err, user) => {});
+  });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
